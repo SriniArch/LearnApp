@@ -4,7 +4,7 @@ import { FamilyHeader } from "@/components/family/family-header"
 
 export const metadata = {
   title: "Family progress — Learn Buddy",
-  description: "Read-only topic and daily challenge scores for a buddy code.",
+  description: "Read-only weekly daily-challenge XP for a buddy code.",
 }
 
 function FamilyFallback() {

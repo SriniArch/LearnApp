@@ -57,8 +57,9 @@ export function FamilyView() {
           Family progress
         </h1>
         <p className="mt-3 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Look up Magi, Yazhini, or any buddy code. This page does not become that child on this
-          phone — it only reads scores. Use this code on the home screen still acts as the kid.
+          Look up Magi, Yazhini, or any buddy code. This page only reads weekly daily-challenge XP
+          (Sunday–Saturday). It does not become that child on this phone — use their code on the
+          home screen to play as them.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">

@@ -80,7 +80,7 @@ export function HomeScreen({
             <span className="block font-display text-2xl font-extrabold">Daily challenge</span>
             <span className="mt-1 block text-sm font-semibold text-primary-foreground/85">
               {daily?.status === "completed" && daily.bestScore !== undefined && daily.total !== undefined
-                ? `Done today — best ${daily.bestScore}/${daily.total}`
+                ? `Done today — ${daily.bestScore}/${daily.total} XP`
                 : daily?.status === "in-progress"
                   ? "You started today's mix. Finish it!"
                   : "20 mixed questions. Same for everyone today."}

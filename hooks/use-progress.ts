@@ -225,13 +225,15 @@ export function useProgress() {
   const markDailyCompleted = useCallback(
     (gradeId: string, score: number, total: number) => {
       const k = dailyProgressKey(gradeId)
-      const prevBest = progress[k]?.bestScore ?? 0
+      // First completed attempt locks the day's XP; retries do not update.
+      if (progress[k]?.status === "completed") return
       persist({
         ...progress,
         [k]: {
           status: "completed",
-          bestScore: Math.max(prevBest, score),
+          bestScore: score,
           total,
+          completedAt: new Date().toISOString(),
         },
       })
     },

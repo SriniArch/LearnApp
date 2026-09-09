@@ -107,7 +107,10 @@ export function DailyChallengeScreen({ gradeId, onBack, progress }: DailyChallen
 
           {record?.status === "completed" && record.bestScore !== undefined && record.total !== undefined && (
             <p className="mt-4 font-display text-lg font-extrabold text-primary">
-              Best today: {record.bestScore} / {record.total}
+              Today&apos;s score: {record.bestScore} / {record.total}
+              <span className="mt-1 block text-sm font-semibold text-muted-foreground">
+                Locked for XP — play again for practice only.
+              </span>
             </p>
           )}
 

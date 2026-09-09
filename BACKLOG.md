@@ -14,8 +14,8 @@ When you ship something, move it from Pending or Desired to Implemented. Keep th
 - [x] Progress in localStorage (`hooks/use-progress.ts`): status and best score; completed is never downgraded
 - [x] Multi-device progress via a buddy code (no email/password): create or enter a code in the header; `/api/progress` stores and merges scores
 - [x] Kid-oriented UI: fonts, subject colors/icons
-- [x] Daily challenge UI: seeded 10-question mix per grade (`buildDailyQuiz` in `lib/quiz.ts`), home card, play/retry, best score stored with buddy progress
-- [x] Parent/teacher family view (`/family`): lookup-only GET by buddy code, Magi/Yazhini roster, daily-by-day best scores and topic completion; no PIN. Class roster and signed-in accounts stay later.
+- [x] Daily challenge UI: seeded 10-question mix per grade (`buildDailyQuiz` in `lib/quiz.ts`), home card, play/retry, first completed score that day locked for XP (retries practice-only)
+- [x] Parent/teacher family view (`/family`): lookup-only GET by buddy code, Magi/Yazhini roster, weekly daily-challenge XP (Sun–Sat; 1 XP per correct on first finish that day; current week day rows + sum; past week totals); no PIN. Class roster and signed-in accounts stay later.
 
 ### Content
 
