@@ -1,0 +1,2210 @@
+{
+  "id": "grade-3",
+  "title": "Grade 3",
+  "subjects": [
+    {
+      "id": "math",
+      "title": "Math",
+      "icon": "🔢",
+      "color": "math",
+      "topics": [
+        {
+          "id": "numbers",
+          "title": "Numbers",
+          "lesson": {
+            "concept": [
+              "Numbers help us count and measure things.",
+              "Each digit sits in a place: ones, tens, and hundreds.",
+              "In 347: 3 is hundreds, 4 is tens, 7 is ones."
+            ],
+            "example": "347 = 300 + 40 + 7. The 4 means 4 tens, which is 40."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "What is the value of the digit 5 in the number 253?",
+                "options": [
+                  "5",
+                  "50",
+                  "500",
+                  "25"
+                ],
+                "answerIndex": 1,
+                "explanation": "The 5 is in the tens place, so its value is 50."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "What number comes right after 199?",
+                "answer": 200,
+                "explanation": "After 199 we count one more to get 200."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which number is the largest?",
+                "options": [
+                  "308",
+                  "83",
+                  "380",
+                  "138"
+                ],
+                "answerIndex": 2,
+                "explanation": "380 has 3 hundreds and the most tens, so it is largest."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "The number 40 has a 4 in the tens place.",
+                "answer": true,
+                "explanation": "40 is 4 tens and 0 ones, so 4 is in the tens place."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "What is 200 + 30 + 6?",
+                "answer": 236,
+                "explanation": "Add the place values: 200 + 30 + 6 = 236."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "What is the value of the digit 7 in 471?",
+                "options": [
+                  "7",
+                  "70",
+                  "700",
+                  "47"
+                ],
+                "answerIndex": 1,
+                "explanation": "The 7 is in the tens place, so its value is 70."
+              },
+              {
+                "id": "e2",
+                "type": "number",
+                "prompt": "What is 400 + 50 + 9?",
+                "answer": 459,
+                "explanation": "Add the place values: 400 + 50 + 9 = 459."
+              },
+              {
+                "id": "e3",
+                "type": "boolean",
+                "prompt": "620 is greater than 602.",
+                "answer": true,
+                "explanation": "Both start with 6, but 620 has 2 tens vs 0 tens, so it is larger."
+              },
+              {
+                "id": "e4",
+                "type": "mcq",
+                "prompt": "Which of these is an even number?",
+                "options": [
+                  "7",
+                  "13",
+                  "24",
+                  "31"
+                ],
+                "answerIndex": 2,
+                "explanation": "24 ends in 4, so it is even."
+              },
+              {
+                "id": "e5",
+                "type": "number",
+                "prompt": "What number comes just before 500?",
+                "answer": 499,
+                "explanation": "One less than 500 is 499."
+              }
+            ]
+          }
+        },
+        {
+          "id": "addition",
+          "title": "Addition",
+          "lesson": {
+            "concept": [
+              "Addition means putting groups together to find the total.",
+              "The + sign means add. The answer is called the sum.",
+              "You can add in any order: 3 + 5 is the same as 5 + 3."
+            ],
+            "example": "If you have 6 apples and get 3 more: 6 + 3 = 9 apples."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "What is 7 + 8?",
+                "answer": 15,
+                "explanation": "7 + 8 = 15."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "What is 24 + 15?",
+                "answer": 39,
+                "explanation": "20 + 10 = 30, and 4 + 5 = 9, so 30 + 9 = 39."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which sum equals 20?",
+                "options": [
+                  "12 + 6",
+                  "11 + 9",
+                  "15 + 4",
+                  "13 + 5"
+                ],
+                "answerIndex": 1,
+                "explanation": "11 + 9 = 20."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "5 + 4 gives the same answer as 4 + 5.",
+                "answer": true,
+                "explanation": "Order does not change the sum. Both equal 9."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "A box has 30 crayons. You add 12 more. How many now?",
+                "answer": 42,
+                "explanation": "30 + 12 = 42 crayons."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "number",
+                "prompt": "What is 45 + 27?",
+                "answer": 72,
+                "explanation": "40 + 20 = 60 and 5 + 7 = 12, so 60 + 12 = 72."
+              },
+              {
+                "id": "e2",
+                "type": "number",
+                "prompt": "What is 9 + 9?",
+                "answer": 18,
+                "explanation": "9 + 9 = 18."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Which sum equals 50?",
+                "options": [
+                  "20 + 30",
+                  "40 + 20",
+                  "25 + 20",
+                  "35 + 10"
+                ],
+                "answerIndex": 0,
+                "explanation": "20 + 30 = 50."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "0 + 8 equals 8.",
+                "answer": true,
+                "explanation": "Adding zero does not change a number."
+              },
+              {
+                "id": "e5",
+                "type": "number",
+                "prompt": "What is 123 + 100?",
+                "answer": 223,
+                "explanation": "Add 100 to the hundreds: 123 + 100 = 223."
+              },
+              {
+                "id": "e6",
+                "type": "number",
+                "prompt": "What is 36 + 42?",
+                "answer": 78,
+                "explanation": "30 + 40 = 70 and 6 + 2 = 8, so 70 + 8 = 78."
+              },
+              {
+                "id": "e7",
+                "type": "number",
+                "prompt": "What is 58 + 17?",
+                "answer": 75,
+                "explanation": "58 + 10 = 68 and 68 + 7 = 75."
+              },
+              {
+                "id": "e8",
+                "type": "mcq",
+                "prompt": "Which sum equals 100?",
+                "options": [
+                  "45 + 55",
+                  "60 + 30",
+                  "25 + 65",
+                  "70 + 20"
+                ],
+                "answerIndex": 0,
+                "explanation": "45 + 55 = 100."
+              },
+              {
+                "id": "e9",
+                "type": "boolean",
+                "prompt": "35 + 25 equals 60.",
+                "answer": true,
+                "explanation": "35 + 25 = 60."
+              },
+              {
+                "id": "e10",
+                "type": "number",
+                "prompt": "What is 200 + 345?",
+                "answer": 545,
+                "explanation": "200 + 300 = 500 and 500 + 45 = 545."
+              },
+              {
+                "id": "e11",
+                "type": "mcq",
+                "prompt": "What is 27 + 36?",
+                "options": [
+                  "53",
+                  "63",
+                  "73",
+                  "83"
+                ],
+                "answerIndex": 1,
+                "explanation": "27 + 36 = 63."
+              },
+              {
+                "id": "e12",
+                "type": "number",
+                "prompt": "What is 125 + 75?",
+                "answer": 200,
+                "explanation": "125 + 75 = 200."
+              },
+              {
+                "id": "e13",
+                "type": "boolean",
+                "prompt": "48 + 32 equals 80.",
+                "answer": true,
+                "explanation": "48 + 32 = 80."
+              },
+              {
+                "id": "e14",
+                "type": "number",
+                "prompt": "What is 314 + 25?",
+                "answer": 339,
+                "explanation": "314 + 20 = 334 and 334 + 5 = 339."
+              },
+              {
+                "id": "e15",
+                "type": "mcq",
+                "prompt": "Ravi has 24 pencils and gets 15 more. How many pencils does he have?",
+                "options": [
+                  "29",
+                  "39",
+                  "49",
+                  "59"
+                ],
+                "answerIndex": 1,
+                "explanation": "24 + 15 = 39 pencils."
+              }
+            ]
+          }
+        },
+        {
+          "id": "subtraction",
+          "title": "Subtraction",
+          "lesson": {
+            "concept": [
+              "Subtraction means taking away to find how many are left.",
+              "The - sign means subtract. The answer is the difference.",
+              "Order matters: 9 - 4 is not the same as 4 - 9."
+            ],
+            "example": "You have 10 balloons and 3 pop: 10 - 3 = 7 balloons left."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "What is 15 - 6?",
+                "answer": 9,
+                "explanation": "15 - 6 = 9."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "What is 50 - 20?",
+                "answer": 30,
+                "explanation": "5 tens minus 2 tens = 3 tens = 30."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "You had 18 stickers and gave away 7. How many are left?",
+                "options": [
+                  "9",
+                  "10",
+                  "11",
+                  "25"
+                ],
+                "answerIndex": 2,
+                "explanation": "18 - 7 = 11 stickers left."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "8 - 3 is the same as 3 - 8.",
+                "answer": false,
+                "explanation": "Order matters in subtraction. 8 - 3 = 5, but 3 - 8 is different."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "What is 100 - 45?",
+                "answer": 55,
+                "explanation": "100 - 45 = 55."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "number",
+                "prompt": "What is 90 - 35?",
+                "answer": 55,
+                "explanation": "90 - 35 = 55."
+              },
+              {
+                "id": "e2",
+                "type": "number",
+                "prompt": "What is 12 - 12?",
+                "answer": 0,
+                "explanation": "Taking away everything leaves 0."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "What is 45 - 20?",
+                "options": [
+                  "25",
+                  "20",
+                  "35",
+                  "15"
+                ],
+                "answerIndex": 0,
+                "explanation": "45 - 20 = 25."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "100 - 1 equals 99.",
+                "answer": true,
+                "explanation": "One less than 100 is 99."
+              },
+              {
+                "id": "e5",
+                "type": "number",
+                "prompt": "What is 64 - 9?",
+                "answer": 55,
+                "explanation": "64 - 9 = 55."
+              },
+              {
+                "id": "e6",
+                "type": "number",
+                "prompt": "What is 75 - 32?",
+                "answer": 43,
+                "explanation": "75 - 30 = 45 and 45 - 2 = 43."
+              },
+              {
+                "id": "e7",
+                "type": "number",
+                "prompt": "What is 100 - 45?",
+                "answer": 55,
+                "explanation": "100 - 45 = 55."
+              },
+              {
+                "id": "e8",
+                "type": "mcq",
+                "prompt": "What is 63 - 27?",
+                "options": [
+                  "26",
+                  "36",
+                  "46",
+                  "56"
+                ],
+                "answerIndex": 1,
+                "explanation": "63 - 27 = 36."
+              },
+              {
+                "id": "e9",
+                "type": "boolean",
+                "prompt": "80 - 30 equals 50.",
+                "answer": true,
+                "explanation": "80 - 30 = 50."
+              },
+              {
+                "id": "e10",
+                "type": "number",
+                "prompt": "What is 500 - 125?",
+                "answer": 375,
+                "explanation": "500 - 125 = 375."
+              },
+              {
+                "id": "e11",
+                "type": "mcq",
+                "prompt": "Which answer is correct for 91 - 19?",
+                "options": [
+                  "62",
+                  "72",
+                  "82",
+                  "92"
+                ],
+                "answerIndex": 1,
+                "explanation": "91 - 19 = 72."
+              },
+              {
+                "id": "e12",
+                "type": "number",
+                "prompt": "What is 150 - 75?",
+                "answer": 75,
+                "explanation": "150 - 75 = 75."
+              },
+              {
+                "id": "e13",
+                "type": "boolean",
+                "prompt": "64 - 24 equals 40.",
+                "answer": true,
+                "explanation": "64 - 24 = 40."
+              },
+              {
+                "id": "e14",
+                "type": "number",
+                "prompt": "What is 326 - 100?",
+                "answer": 226,
+                "explanation": "Subtracting 100 changes the hundreds: 326 - 100 = 226."
+              },
+              {
+                "id": "e15",
+                "type": "mcq",
+                "prompt": "Maya has 50 stickers and gives 18 away. How many stickers are left?",
+                "options": [
+                  "22",
+                  "32",
+                  "38",
+                  "42"
+                ],
+                "answerIndex": 1,
+                "explanation": "50 - 18 = 32 stickers."
+              }
+            ]
+          }
+        },
+        {
+          "id": "multiplication",
+          "title": "Multiplication",
+          "lesson": {
+            "concept": [
+              "Multiplication is fast adding of equal groups.",
+              "3 × 4 means 3 groups of 4, which is 4 + 4 + 4.",
+              "The × sign means times. The answer is the product."
+            ],
+            "example": "4 bags with 5 marbles each: 4 × 5 = 20 marbles."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "What is 3 × 4?",
+                "answer": 12,
+                "explanation": "3 groups of 4 = 4 + 4 + 4 = 12."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "What is 6 × 5?",
+                "answer": 30,
+                "explanation": "6 × 5 = 30."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which one equals 2 + 2 + 2 + 2?",
+                "options": [
+                  "4 × 2",
+                  "2 × 3",
+                  "4 × 4",
+                  "2 + 4"
+                ],
+                "answerIndex": 0,
+                "explanation": "Four 2s is 4 × 2 = 8."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "Any number multiplied by 1 stays the same.",
+                "answer": true,
+                "explanation": "7 × 1 = 7. Multiplying by 1 does not change a number."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "What is 7 × 2?",
+                "answer": 14,
+                "explanation": "7 × 2 = 14."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "number",
+                "prompt": "What is 4 × 4?",
+                "answer": 16,
+                "explanation": "4 × 4 = 16."
+              },
+              {
+                "id": "e2",
+                "type": "number",
+                "prompt": "What is 8 × 3?",
+                "answer": 24,
+                "explanation": "8 × 3 = 24."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "What is 5 × 0?",
+                "options": [
+                  "5",
+                  "0",
+                  "50",
+                  "10"
+                ],
+                "answerIndex": 1,
+                "explanation": "Any number times 0 is 0."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "6 × 2 gives the same answer as 2 × 6.",
+                "answer": true,
+                "explanation": "Order does not change the product. Both equal 12."
+              },
+              {
+                "id": "e5",
+                "type": "number",
+                "prompt": "What is 9 × 3?",
+                "answer": 27,
+                "explanation": "9 × 3 = 27."
+              },
+              {
+                "id": "e6",
+                "type": "number",
+                "prompt": "What is 5 × 6?",
+                "answer": 30,
+                "explanation": "5 × 6 = 30."
+              },
+              {
+                "id": "e7",
+                "type": "number",
+                "prompt": "What is 7 × 4?",
+                "answer": 28,
+                "explanation": "7 × 4 = 28."
+              },
+              {
+                "id": "e8",
+                "type": "mcq",
+                "prompt": "What is 6 × 5?",
+                "options": [
+                  "25",
+                  "30",
+                  "35",
+                  "40"
+                ],
+                "answerIndex": 1,
+                "explanation": "6 × 5 = 30."
+              },
+              {
+                "id": "e9",
+                "type": "boolean",
+                "prompt": "3 × 7 equals 21.",
+                "answer": true,
+                "explanation": "3 × 7 = 21."
+              },
+              {
+                "id": "e10",
+                "type": "number",
+                "prompt": "What is 10 × 8?",
+                "answer": 80,
+                "explanation": "10 × 8 = 80."
+              },
+              {
+                "id": "e11",
+                "type": "mcq",
+                "prompt": "Which multiplication gives 36?",
+                "options": [
+                  "4 × 8",
+                  "6 × 6",
+                  "5 × 7",
+                  "3 × 9"
+                ],
+                "answerIndex": 1,
+                "explanation": "6 × 6 = 36."
+              },
+              {
+                "id": "e12",
+                "type": "number",
+                "prompt": "What is 7 × 8?",
+                "answer": 56,
+                "explanation": "7 × 8 = 56."
+              },
+              {
+                "id": "e13",
+                "type": "boolean",
+                "prompt": "9 × 2 equals 18.",
+                "answer": true,
+                "explanation": "9 × 2 = 18."
+              },
+              {
+                "id": "e14",
+                "type": "number",
+                "prompt": "What is 3 × 12?",
+                "answer": 36,
+                "explanation": "3 groups of 12 make 36."
+              },
+              {
+                "id": "e15",
+                "type": "mcq",
+                "prompt": "There are 4 bags with 5 apples in each bag. How many apples are there?",
+                "options": [
+                  "9",
+                  "15",
+                  "20",
+                  "25"
+                ],
+                "answerIndex": 2,
+                "explanation": "4 × 5 = 20 apples."
+              }
+            ]
+          }
+        },
+        {
+          "id": "division",
+          "title": "Division",
+          "lesson": {
+            "concept": [
+              "Division means sharing into equal groups.",
+              "12 ÷ 3 asks: how many are in each of 3 equal groups?",
+              "Division is the opposite of multiplication."
+            ],
+            "example": "Share 12 cookies among 4 friends: 12 ÷ 4 = 3 each."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "What is 12 ÷ 3?",
+                "answer": 4,
+                "explanation": "12 shared into 3 groups = 4 in each group."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "What is 20 ÷ 5?",
+                "answer": 4,
+                "explanation": "20 ÷ 5 = 4."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "8 candies shared equally by 2 kids. Each kid gets?",
+                "options": [
+                  "2",
+                  "4",
+                  "6",
+                  "8"
+                ],
+                "answerIndex": 1,
+                "explanation": "8 ÷ 2 = 4 candies each."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "Division is the opposite of multiplication.",
+                "answer": true,
+                "explanation": "If 3 × 4 = 12, then 12 ÷ 4 = 3."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "What is 15 ÷ 3?",
+                "answer": 5,
+                "explanation": "15 ÷ 3 = 5."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "number",
+                "prompt": "What is 16 ÷ 4?",
+                "answer": 4,
+                "explanation": "16 ÷ 4 = 4."
+              },
+              {
+                "id": "e2",
+                "type": "number",
+                "prompt": "What is 18 ÷ 2?",
+                "answer": 9,
+                "explanation": "18 ÷ 2 = 9."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "What is 24 ÷ 6?",
+                "options": [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                "answerIndex": 1,
+                "explanation": "24 ÷ 6 = 4."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "10 ÷ 1 equals 10.",
+                "answer": true,
+                "explanation": "Dividing by 1 does not change a number."
+              },
+              {
+                "id": "e5",
+                "type": "number",
+                "prompt": "What is 21 ÷ 3?",
+                "answer": 7,
+                "explanation": "21 ÷ 3 = 7."
+              },
+              {
+                "id": "e6",
+                "type": "number",
+                "prompt": "What is 20 ÷ 5?",
+                "answer": 4,
+                "explanation": "20 ÷ 5 = 4."
+              },
+              {
+                "id": "e7",
+                "type": "number",
+                "prompt": "What is 30 ÷ 5?",
+                "answer": 6,
+                "explanation": "30 ÷ 5 = 6."
+              },
+              {
+                "id": "e8",
+                "type": "mcq",
+                "prompt": "What is 36 ÷ 6?",
+                "options": [
+                  "4",
+                  "5",
+                  "6",
+                  "7"
+                ],
+                "answerIndex": 2,
+                "explanation": "36 ÷ 6 = 6."
+              },
+              {
+                "id": "e9",
+                "type": "boolean",
+                "prompt": "25 ÷ 5 equals 5.",
+                "answer": true,
+                "explanation": "25 ÷ 5 = 5."
+              },
+              {
+                "id": "e10",
+                "type": "number",
+                "prompt": "What is 40 ÷ 8?",
+                "answer": 5,
+                "explanation": "40 ÷ 8 = 5."
+              },
+              {
+                "id": "e11",
+                "type": "mcq",
+                "prompt": "Which division gives 7?",
+                "options": [
+                  "21 ÷ 3",
+                  "24 ÷ 4",
+                  "32 ÷ 4",
+                  "45 ÷ 5"
+                ],
+                "answerIndex": 0,
+                "explanation": "21 ÷ 3 = 7."
+              },
+              {
+                "id": "e12",
+                "type": "number",
+                "prompt": "What is 42 ÷ 6?",
+                "answer": 7,
+                "explanation": "42 ÷ 6 = 7."
+              },
+              {
+                "id": "e13",
+                "type": "boolean",
+                "prompt": "36 ÷ 4 equals 9.",
+                "answer": true,
+                "explanation": "36 ÷ 4 = 9."
+              },
+              {
+                "id": "e14",
+                "type": "number",
+                "prompt": "What is 48 ÷ 8?",
+                "answer": 6,
+                "explanation": "48 ÷ 8 = 6."
+              },
+              {
+                "id": "e15",
+                "type": "mcq",
+                "prompt": "There are 24 candies shared equally among 4 children. How many candies does each child get?",
+                "options": [
+                  "4",
+                  "5",
+                  "6",
+                  "8"
+                ],
+                "answerIndex": 2,
+                "explanation": "24 ÷ 4 = 6 candies for each child."
+              }
+            ]
+          }
+        },
+        {
+          "id": "fractions",
+          "title": "Fractions",
+          "lesson": {
+            "concept": [
+              "A fraction shows part of a whole.",
+              "In 1/2, the bottom (2) is how many equal parts in total.",
+              "The top (1) is how many parts we have."
+            ],
+            "example": "A pizza cut into 4 equal slices: 1 slice is 1/4 of the pizza."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "A cake is cut into 4 equal pieces. One piece is:",
+                "options": [
+                  "1/2",
+                  "1/3",
+                  "1/4",
+                  "1/8"
+                ],
+                "answerIndex": 2,
+                "explanation": "One of 4 equal parts is 1/4."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "1/2 is bigger than 1/4.",
+                "answer": true,
+                "explanation": "Halves are bigger than quarters, so 1/2 > 1/4."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "How many quarters make one whole?",
+                "options": [
+                  "2",
+                  "3",
+                  "4",
+                  "8"
+                ],
+                "answerIndex": 2,
+                "explanation": "Four quarters (4/4) make one whole."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "In the fraction 3/5, the number 5 is the total parts.",
+                "answer": true,
+                "explanation": "The bottom number (denominator) is the total parts."
+              },
+              {
+                "id": "q5",
+                "type": "number",
+                "prompt": "How many halves are in one whole? Type the number.",
+                "answer": 2,
+                "explanation": "Two halves (2/2) make one whole."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Half of a pizza is written as:",
+                "options": [
+                  "1/2",
+                  "1/3",
+                  "1/4",
+                  "1/8"
+                ],
+                "answerIndex": 0,
+                "explanation": "One of two equal parts is 1/2."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "1/3 is smaller than 1/2.",
+                "answer": true,
+                "explanation": "Thirds are smaller pieces than halves."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "2/4 is the same as which fraction?",
+                "options": [
+                  "1/2",
+                  "1/4",
+                  "1/3",
+                  "3/4"
+                ],
+                "answerIndex": 0,
+                "explanation": "2/4 simplifies to 1/2."
+              },
+              {
+                "id": "e4",
+                "type": "number",
+                "prompt": "How many thirds make one whole? Type the number.",
+                "answer": 3,
+                "explanation": "Three thirds (3/3) make one whole."
+              },
+              {
+                "id": "e5",
+                "type": "boolean",
+                "prompt": "The top number of a fraction is called the numerator.",
+                "answer": true,
+                "explanation": "The numerator is on top; the denominator is on the bottom."
+              }
+            ]
+          }
+        },
+        {
+          "id": "geometry",
+          "title": "Geometry",
+          "lesson": {
+            "concept": [
+              "Shapes are all around us.",
+              "A triangle has 3 sides, a square has 4 equal sides.",
+              "A circle is perfectly round with no corners."
+            ],
+            "example": "A stop sign has 8 sides. A window is often a square or rectangle."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "How many sides does a triangle have?",
+                "answer": 3,
+                "explanation": "A triangle always has 3 sides."
+              },
+              {
+                "id": "q2",
+                "type": "mcq",
+                "prompt": "Which shape has 4 equal sides?",
+                "options": [
+                  "Triangle",
+                  "Square",
+                  "Circle",
+                  "Oval"
+                ],
+                "answerIndex": 1,
+                "explanation": "A square has 4 equal sides."
+              },
+              {
+                "id": "q3",
+                "type": "boolean",
+                "prompt": "A circle has corners.",
+                "answer": false,
+                "explanation": "A circle is round and has no corners."
+              },
+              {
+                "id": "q4",
+                "type": "number",
+                "prompt": "How many corners does a square have?",
+                "answer": 4,
+                "explanation": "A square has 4 corners (also called vertices)."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "A shape with 5 sides is called a:",
+                "options": [
+                  "Pentagon",
+                  "Hexagon",
+                  "Square",
+                  "Triangle"
+                ],
+                "answerIndex": 0,
+                "explanation": "A 5-sided shape is a pentagon."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "number",
+                "prompt": "How many sides does a rectangle have?",
+                "answer": 4,
+                "explanation": "A rectangle has 4 sides."
+              },
+              {
+                "id": "e2",
+                "type": "mcq",
+                "prompt": "A shape with 6 sides is called a:",
+                "options": [
+                  "Pentagon",
+                  "Hexagon",
+                  "Square",
+                  "Triangle"
+                ],
+                "answerIndex": 1,
+                "explanation": "A 6-sided shape is a hexagon."
+              },
+              {
+                "id": "e3",
+                "type": "boolean",
+                "prompt": "A triangle has 3 corners.",
+                "answer": true,
+                "explanation": "A triangle has 3 sides and 3 corners."
+              },
+              {
+                "id": "e4",
+                "type": "number",
+                "prompt": "How many corners does a rectangle have?",
+                "answer": 4,
+                "explanation": "A rectangle has 4 corners."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "A ball is shaped like a:",
+                "options": [
+                  "Circle",
+                  "Sphere",
+                  "Square",
+                  "Cube"
+                ],
+                "answerIndex": 1,
+                "explanation": "A ball is a 3D round shape called a sphere."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "icon": "🔬",
+      "color": "science",
+      "topics": [
+        {
+          "id": "living-things",
+          "title": "Living & Non-Living",
+          "lesson": {
+            "concept": [
+              "Living things grow, need food and water, and can move or change.",
+              "Non-living things do not grow, eat, or breathe.",
+              "Plants, animals, and people are living things."
+            ],
+            "example": "A dog is living (it eats and grows). A rock is non-living."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "Which of these is a living thing?",
+                "options": [
+                  "Rock",
+                  "Tree",
+                  "Chair",
+                  "Spoon"
+                ],
+                "answerIndex": 1,
+                "explanation": "A tree grows and needs water, so it is living."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "A car is a living thing because it moves.",
+                "answer": false,
+                "explanation": "A car moves but does not grow or eat, so it is non-living."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "All living things need:",
+                "options": [
+                  "Toys",
+                  "Food and water",
+                  "Money",
+                  "Phones"
+                ],
+                "answerIndex": 1,
+                "explanation": "Living things need food and water to survive."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "Plants are living things.",
+                "answer": true,
+                "explanation": "Plants grow, need water and sunlight, so they are living."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "Which is NOT something living things do?",
+                "options": [
+                  "Grow",
+                  "Need food",
+                  "Rust",
+                  "Breathe"
+                ],
+                "answerIndex": 2,
+                "explanation": "Rusting happens to metal, a non-living material."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Which of these grows and needs food?",
+                "options": [
+                  "Car",
+                  "Flower",
+                  "Rock",
+                  "Cup"
+                ],
+                "answerIndex": 1,
+                "explanation": "A flower is living; it grows and needs water and light."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Fish are living things.",
+                "answer": true,
+                "explanation": "Fish move, eat, and grow, so they are living."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Which is a non-living thing?",
+                "options": [
+                  "Dog",
+                  "Cat",
+                  "Book",
+                  "Bird"
+                ],
+                "answerIndex": 2,
+                "explanation": "A book does not eat or grow, so it is non-living."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "Living things can have babies (reproduce).",
+                "answer": true,
+                "explanation": "Making more of their own kind is something living things do."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "What do living things need to breathe?",
+                "options": [
+                  "Air",
+                  "Plastic",
+                  "Glass",
+                  "Metal"
+                ],
+                "answerIndex": 0,
+                "explanation": "Living things need air to breathe."
+              }
+            ]
+          }
+        },
+        {
+          "id": "plants",
+          "title": "Plants",
+          "lesson": {
+            "concept": [
+              "Plants make their own food using sunlight.",
+              "Roots take in water. Leaves catch sunlight.",
+              "The stem holds the plant up and carries water."
+            ],
+            "example": "A sunflower turns to face the sun to catch more light."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "Which part of a plant takes in water from the soil?",
+                "options": [
+                  "Leaf",
+                  "Flower",
+                  "Roots",
+                  "Petal"
+                ],
+                "answerIndex": 2,
+                "explanation": "Roots absorb water and nutrients from the soil."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "Plants need sunlight to make food.",
+                "answer": true,
+                "explanation": "Plants use sunlight to make their own food."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which part catches sunlight?",
+                "options": [
+                  "Roots",
+                  "Leaves",
+                  "Seeds",
+                  "Stem"
+                ],
+                "answerIndex": 1,
+                "explanation": "Leaves catch sunlight to help the plant make food."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "A plant can grow without any water.",
+                "answer": false,
+                "explanation": "Plants need water to grow and stay healthy."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "What holds the plant up and carries water to the leaves?",
+                "options": [
+                  "Stem",
+                  "Flower",
+                  "Fruit",
+                  "Root hair"
+                ],
+                "answerIndex": 0,
+                "explanation": "The stem supports the plant and moves water upward."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Seeds grow into:",
+                "options": [
+                  "Plants",
+                  "Rocks",
+                  "Clouds",
+                  "Animals"
+                ],
+                "answerIndex": 0,
+                "explanation": "A seed grows into a new plant."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Flowers can make seeds.",
+                "answer": true,
+                "explanation": "Flowers help the plant make new seeds."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "What color are most leaves?",
+                "options": [
+                  "Green",
+                  "Blue",
+                  "Red",
+                  "Black"
+                ],
+                "answerIndex": 0,
+                "explanation": "Most leaves are green because of a substance that catches light."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "Roots usually grow under the ground.",
+                "answer": true,
+                "explanation": "Roots grow down into the soil to reach water."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "Which colorful part of a plant attracts bees?",
+                "options": [
+                  "Flower",
+                  "Root",
+                  "Stem",
+                  "Leaf"
+                ],
+                "answerIndex": 0,
+                "explanation": "Bright flowers attract bees and other insects."
+              }
+            ]
+          }
+        },
+        {
+          "id": "five-senses",
+          "title": "The Five Senses",
+          "lesson": {
+            "concept": [
+              "We learn about the world using five senses.",
+              "Sight (eyes), hearing (ears), smell (nose), taste (tongue), touch (skin).",
+              "Each sense uses a different body part."
+            ],
+            "example": "You smell a flower with your nose and see its color with your eyes."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "How many senses do we have?",
+                "answer": 5,
+                "explanation": "We have 5 senses: sight, hearing, smell, taste, touch."
+              },
+              {
+                "id": "q2",
+                "type": "mcq",
+                "prompt": "Which body part do you use to taste?",
+                "options": [
+                  "Nose",
+                  "Tongue",
+                  "Ears",
+                  "Eyes"
+                ],
+                "answerIndex": 1,
+                "explanation": "You taste with your tongue."
+              },
+              {
+                "id": "q3",
+                "type": "boolean",
+                "prompt": "You hear sounds with your ears.",
+                "answer": true,
+                "explanation": "Ears are the body part for hearing."
+              },
+              {
+                "id": "q4",
+                "type": "mcq",
+                "prompt": "Which sense uses your skin?",
+                "options": [
+                  "Touch",
+                  "Smell",
+                  "Sight",
+                  "Taste"
+                ],
+                "answerIndex": 0,
+                "explanation": "Touch uses the skin to feel things."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "You use your nose for the sense of:",
+                "options": [
+                  "Hearing",
+                  "Smell",
+                  "Taste",
+                  "Sight"
+                ],
+                "answerIndex": 1,
+                "explanation": "The nose is used for smelling."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Which sense uses your eyes?",
+                "options": [
+                  "Sight",
+                  "Smell",
+                  "Taste",
+                  "Touch"
+                ],
+                "answerIndex": 0,
+                "explanation": "You see with your eyes, which is the sense of sight."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "You use your tongue to taste sweet things.",
+                "answer": true,
+                "explanation": "The tongue senses taste, like sweet and sour."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Soft and hard are things you can:",
+                "options": [
+                  "Touch",
+                  "See only",
+                  "Hear",
+                  "Smell"
+                ],
+                "answerIndex": 0,
+                "explanation": "You feel soft and hard using touch."
+              },
+              {
+                "id": "e4",
+                "type": "mcq",
+                "prompt": "A loud drum is sensed with your:",
+                "options": [
+                  "Ears",
+                  "Nose",
+                  "Tongue",
+                  "Skin"
+                ],
+                "answerIndex": 0,
+                "explanation": "You hear sounds with your ears."
+              },
+              {
+                "id": "e5",
+                "type": "boolean",
+                "prompt": "Your nose can smell food cooking.",
+                "answer": true,
+                "explanation": "Smelling is the job of your nose."
+              }
+            ]
+          }
+        },
+        {
+          "id": "weather",
+          "title": "Weather",
+          "lesson": {
+            "concept": [
+              "Weather is what the sky and air are like each day.",
+              "It can be sunny, rainy, cloudy, windy, or snowy.",
+              "The Sun warms the Earth and helps make weather."
+            ],
+            "example": "On a rainy day we use an umbrella. On a sunny day it feels warm."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "What do you use to stay dry in the rain?",
+                "options": [
+                  "Sunglasses",
+                  "Umbrella",
+                  "Fan",
+                  "Gloves"
+                ],
+                "answerIndex": 1,
+                "explanation": "An umbrella keeps the rain off you."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "The Sun helps make weather warm.",
+                "answer": true,
+                "explanation": "The Sun warms the Earth and the air."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which is a type of weather?",
+                "options": [
+                  "Snowy",
+                  "Happy",
+                  "Tall",
+                  "Loud"
+                ],
+                "answerIndex": 0,
+                "explanation": "Snowy describes weather; the others do not."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "Wind is moving air.",
+                "answer": true,
+                "explanation": "Wind happens when air moves from place to place."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "Clouds are made of:",
+                "options": [
+                  "Cotton",
+                  "Tiny water drops",
+                  "Smoke",
+                  "Dust only"
+                ],
+                "answerIndex": 1,
+                "explanation": "Clouds are made of many tiny drops of water."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Frozen rain that falls in winter is called:",
+                "options": [
+                  "Snow",
+                  "Dust",
+                  "Smoke",
+                  "Steam"
+                ],
+                "answerIndex": 0,
+                "explanation": "Snow is frozen water that falls from clouds."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "A thermometer measures temperature.",
+                "answer": true,
+                "explanation": "A thermometer tells us how hot or cold it is."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "On a windy day, what is moving?",
+                "options": [
+                  "Air",
+                  "Rocks",
+                  "Houses",
+                  "Roads"
+                ],
+                "answerIndex": 0,
+                "explanation": "Wind is moving air."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "A rainbow can appear after rain.",
+                "answer": true,
+                "explanation": "Sunlight through raindrops can make a rainbow."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "Which season is usually the coldest?",
+                "options": [
+                  "Winter",
+                  "Summer",
+                  "Spring",
+                  "Fall"
+                ],
+                "answerIndex": 0,
+                "explanation": "Winter is the coldest season."
+              }
+            ]
+          }
+        },
+        {
+          "id": "matter",
+          "title": "States of Matter",
+          "lesson": {
+            "concept": [
+              "Matter is anything that takes up space.",
+              "The three states are solid, liquid, and gas.",
+              "Ice is solid, water is liquid, and steam is gas."
+            ],
+            "example": "Heat ice and it melts into water. Heat water and it becomes steam."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "Which one is a liquid?",
+                "options": [
+                  "Ice",
+                  "Water",
+                  "Rock",
+                  "Wood"
+                ],
+                "answerIndex": 1,
+                "explanation": "Water is a liquid; it flows and takes the shape of its cup."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "Ice is the solid form of water.",
+                "answer": true,
+                "explanation": "When water freezes it becomes solid ice."
+              },
+              {
+                "id": "q3",
+                "type": "number",
+                "prompt": "How many main states of matter did we learn?",
+                "answer": 3,
+                "explanation": "Solid, liquid, and gas make 3 states."
+              },
+              {
+                "id": "q4",
+                "type": "mcq",
+                "prompt": "What happens to ice when it gets warm?",
+                "options": [
+                  "It melts",
+                  "It grows",
+                  "It freezes",
+                  "It disappears"
+                ],
+                "answerIndex": 0,
+                "explanation": "Warm ice melts and turns into liquid water."
+              },
+              {
+                "id": "q5",
+                "type": "boolean",
+                "prompt": "A rock is a solid.",
+                "answer": true,
+                "explanation": "A rock keeps its shape, so it is a solid."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Which of these is a gas?",
+                "options": [
+                  "Ice",
+                  "Water",
+                  "Air",
+                  "Rock"
+                ],
+                "answerIndex": 2,
+                "explanation": "Air is a gas; it spreads to fill space."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Liquids take the shape of their container.",
+                "answer": true,
+                "explanation": "A liquid flows and fills the bottom of its container."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Steam is water in which state?",
+                "options": [
+                  "Solid",
+                  "Liquid",
+                  "Gas",
+                  "Rock"
+                ],
+                "answerIndex": 2,
+                "explanation": "Steam is water as a gas."
+              },
+              {
+                "id": "e4",
+                "type": "number",
+                "prompt": "How many main states of matter are there?",
+                "answer": 3,
+                "explanation": "Solid, liquid, and gas make 3 states."
+              },
+              {
+                "id": "e5",
+                "type": "boolean",
+                "prompt": "A solid keeps its own shape.",
+                "answer": true,
+                "explanation": "Solids hold their shape unless something changes them."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "title": "Geography",
+      "icon": "🌍",
+      "color": "geography",
+      "topics": [
+        {
+          "id": "land-water",
+          "title": "Land & Water",
+          "lesson": {
+            "concept": [
+              "Earth has both land and water.",
+              "Big areas of land are called continents.",
+              "Large bodies of salty water are called oceans."
+            ],
+            "example": "Most of the Earth is covered by water, mostly oceans."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "A very large body of salt water is called a:",
+                "options": [
+                  "Lake",
+                  "Pond",
+                  "Ocean",
+                  "River"
+                ],
+                "answerIndex": 2,
+                "explanation": "Oceans are the largest bodies of salt water."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "More of Earth is covered by water than by land.",
+                "answer": true,
+                "explanation": "About three-quarters of Earth is water."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "A large area of land is called a:",
+                "options": [
+                  "Continent",
+                  "Cloud",
+                  "Star",
+                  "Wave"
+                ],
+                "answerIndex": 0,
+                "explanation": "Continents are the large land areas on Earth."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "A river is smaller than an ocean.",
+                "answer": true,
+                "explanation": "Rivers are much smaller than oceans."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "Which one is water we can drink (fresh water)?",
+                "options": [
+                  "Ocean",
+                  "Sea",
+                  "River",
+                  "None of these"
+                ],
+                "answerIndex": 2,
+                "explanation": "Rivers carry fresh water; oceans and seas are salty."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "A small body of fresh water surrounded by land is a:",
+                "options": [
+                  "Lake",
+                  "Ocean",
+                  "Sea",
+                  "Gulf"
+                ],
+                "answerIndex": 0,
+                "explanation": "A lake is fresh water surrounded by land."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Ocean water is salty.",
+                "answer": true,
+                "explanation": "Oceans are full of salt water."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Water flowing across land in a channel is a:",
+                "options": [
+                  "River",
+                  "Mountain",
+                  "Desert",
+                  "Forest"
+                ],
+                "answerIndex": 0,
+                "explanation": "A river carries water across the land."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "An island is land surrounded by water.",
+                "answer": true,
+                "explanation": "Water goes all the way around an island."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "Most of Earth's surface is:",
+                "options": [
+                  "Water",
+                  "Land",
+                  "Ice",
+                  "Sand"
+                ],
+                "answerIndex": 0,
+                "explanation": "About three-quarters of Earth is water."
+              }
+            ]
+          }
+        },
+        {
+          "id": "continents",
+          "title": "Continents",
+          "lesson": {
+            "concept": [
+              "There are 7 continents on Earth.",
+              "They are Asia, Africa, North America, South America, Antarctica, Europe, and Australia.",
+              "Asia is the largest continent."
+            ],
+            "example": "Antarctica is the coldest continent, covered in ice."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "number",
+                "prompt": "How many continents are there?",
+                "answer": 7,
+                "explanation": "Earth has 7 continents."
+              },
+              {
+                "id": "q2",
+                "type": "mcq",
+                "prompt": "Which is the largest continent?",
+                "options": [
+                  "Africa",
+                  "Asia",
+                  "Europe",
+                  "Australia"
+                ],
+                "answerIndex": 1,
+                "explanation": "Asia is the biggest continent."
+              },
+              {
+                "id": "q3",
+                "type": "boolean",
+                "prompt": "Antarctica is very cold and covered in ice.",
+                "answer": true,
+                "explanation": "Antarctica is the coldest continent."
+              },
+              {
+                "id": "q4",
+                "type": "mcq",
+                "prompt": "Which of these is a continent?",
+                "options": [
+                  "France",
+                  "Africa",
+                  "Canada",
+                  "Egypt"
+                ],
+                "answerIndex": 1,
+                "explanation": "Africa is a continent; the others are countries."
+              },
+              {
+                "id": "q5",
+                "type": "boolean",
+                "prompt": "Australia is both a country and a continent.",
+                "answer": true,
+                "explanation": "Australia is a country that is also its own continent."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "Which is the smallest continent?",
+                "options": [
+                  "Australia",
+                  "Asia",
+                  "Africa",
+                  "Europe"
+                ],
+                "answerIndex": 0,
+                "explanation": "Australia is the smallest continent."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Africa is a continent.",
+                "answer": true,
+                "explanation": "Africa is one of the 7 continents."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "Penguins mostly live on which cold continent?",
+                "options": [
+                  "Antarctica",
+                  "Africa",
+                  "Asia",
+                  "Europe"
+                ],
+                "answerIndex": 0,
+                "explanation": "Many penguins live in icy Antarctica."
+              },
+              {
+                "id": "e4",
+                "type": "number",
+                "prompt": "How many continents are there?",
+                "answer": 7,
+                "explanation": "Earth has 7 continents."
+              },
+              {
+                "id": "e5",
+                "type": "boolean",
+                "prompt": "Europe and Asia are both continents.",
+                "answer": true,
+                "explanation": "Both Europe and Asia are separate continents."
+              }
+            ]
+          }
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Directions",
+          "lesson": {
+            "concept": [
+              "A map is a drawing of a place from above.",
+              "The four main directions are North, South, East, and West.",
+              "On most maps, North points up."
+            ],
+            "example": "A compass helps you find North so you know which way to go."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "On most maps, which direction is at the top?",
+                "options": [
+                  "South",
+                  "North",
+                  "East",
+                  "West"
+                ],
+                "answerIndex": 1,
+                "explanation": "North is usually at the top of a map."
+              },
+              {
+                "id": "q2",
+                "type": "number",
+                "prompt": "How many main directions are there?",
+                "answer": 4,
+                "explanation": "North, South, East, and West make 4 main directions."
+              },
+              {
+                "id": "q3",
+                "type": "boolean",
+                "prompt": "A map shows a place from above.",
+                "answer": true,
+                "explanation": "Maps are like a bird's-eye view from the sky."
+              },
+              {
+                "id": "q4",
+                "type": "mcq",
+                "prompt": "Which tool helps you find directions?",
+                "options": [
+                  "Compass",
+                  "Spoon",
+                  "Clock",
+                  "Ruler"
+                ],
+                "answerIndex": 0,
+                "explanation": "A compass points North and helps with directions."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "The opposite of North is:",
+                "options": [
+                  "East",
+                  "West",
+                  "South",
+                  "Up"
+                ],
+                "answerIndex": 2,
+                "explanation": "South is the opposite of North."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "The direction opposite of East is:",
+                "options": [
+                  "West",
+                  "North",
+                  "South",
+                  "Up"
+                ],
+                "answerIndex": 0,
+                "explanation": "West is opposite East."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "A globe is a round model of Earth.",
+                "answer": true,
+                "explanation": "A globe shows Earth as a sphere."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "The key (legend) on a map explains the:",
+                "options": [
+                  "Symbols",
+                  "Weather",
+                  "Food",
+                  "Music"
+                ],
+                "answerIndex": 0,
+                "explanation": "A map key tells what the symbols mean."
+              },
+              {
+                "id": "e4",
+                "type": "mcq",
+                "prompt": "The direction between North and East is:",
+                "options": [
+                  "Northeast",
+                  "Southwest",
+                  "Down",
+                  "Up"
+                ],
+                "answerIndex": 0,
+                "explanation": "Between North and East is Northeast."
+              },
+              {
+                "id": "e5",
+                "type": "boolean",
+                "prompt": "A map helps you find places.",
+                "answer": true,
+                "explanation": "Maps show where places are and how to get there."
+              }
+            ]
+          }
+        },
+        {
+          "id": "my-country",
+          "title": "Countries & Cities",
+          "lesson": {
+            "concept": [
+              "A country is a large area with its own government and flag.",
+              "A city is a busy place inside a country where many people live.",
+              "The capital city is where a country's leaders work."
+            ],
+            "example": "A country has many cities. One special city is the capital."
+          },
+          "questions": {
+            "base": [
+              {
+                "id": "q1",
+                "type": "mcq",
+                "prompt": "The city where a country's leaders work is called the:",
+                "options": [
+                  "Village",
+                  "Capital",
+                  "Farm",
+                  "Island"
+                ],
+                "answerIndex": 1,
+                "explanation": "The capital is where the country is governed."
+              },
+              {
+                "id": "q2",
+                "type": "boolean",
+                "prompt": "A country can have many cities.",
+                "answer": true,
+                "explanation": "Countries are large and contain many cities."
+              },
+              {
+                "id": "q3",
+                "type": "mcq",
+                "prompt": "Which of these usually represents a country?",
+                "options": [
+                  "A flag",
+                  "A toy",
+                  "A cloud",
+                  "A song only"
+                ],
+                "answerIndex": 0,
+                "explanation": "Each country has its own flag."
+              },
+              {
+                "id": "q4",
+                "type": "boolean",
+                "prompt": "A city is bigger than a whole country.",
+                "answer": false,
+                "explanation": "A city is a part of a country, so it is smaller."
+              },
+              {
+                "id": "q5",
+                "type": "mcq",
+                "prompt": "A place with a small number of people, smaller than a city, is a:",
+                "options": [
+                  "Village",
+                  "Continent",
+                  "Ocean",
+                  "Planet"
+                ],
+                "answerIndex": 0,
+                "explanation": "A village is smaller than a city."
+              }
+            ],
+            "extra": [
+              {
+                "id": "e1",
+                "type": "mcq",
+                "prompt": "A cloth with colors and patterns that stands for a country is a:",
+                "options": [
+                  "Flag",
+                  "Shoe",
+                  "Cloud",
+                  "Tree"
+                ],
+                "answerIndex": 0,
+                "explanation": "Each country has its own flag."
+              },
+              {
+                "id": "e2",
+                "type": "boolean",
+                "prompt": "Every country has a capital city.",
+                "answer": true,
+                "explanation": "The capital is where a country's leaders work."
+              },
+              {
+                "id": "e3",
+                "type": "mcq",
+                "prompt": "All the countries together are on our:",
+                "options": [
+                  "Earth",
+                  "Moon",
+                  "Sun",
+                  "Star"
+                ],
+                "answerIndex": 0,
+                "explanation": "All countries are on planet Earth."
+              },
+              {
+                "id": "e4",
+                "type": "boolean",
+                "prompt": "A town is smaller than a country.",
+                "answer": true,
+                "explanation": "A country contains many towns and cities."
+              },
+              {
+                "id": "e5",
+                "type": "mcq",
+                "prompt": "People who live in a country are called its:",
+                "options": [
+                  "Citizens",
+                  "Visitors",
+                  "Tourists",
+                  "Strangers"
+                ],
+                "answerIndex": 0,
+                "explanation": "People who belong to a country are its citizens."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

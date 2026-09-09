@@ -1,5 +1,4 @@
-import { getGrade, type Question } from "./curriculum"
-import { getExtraQuestions } from "./extra-questions"
+import { getExtraQuestions, getGrade, type Question } from "./curriculum"
 
 // ----------------------------------------------------------------------------
 // Randomization helpers used by quizzes and the daily challenge.
@@ -136,8 +135,8 @@ function saltFromString(value: string): number {
 }
 
 // Mix questions from every topic in the grade. Seeded so the same grade
-// sees the same 10 questions on a given local calendar day.
-export function buildDailyQuiz(gradeId: string, size = 10, date = new Date()): Question[] {
+// sees the same 20 questions on a given local calendar day.
+export function buildDailyQuiz(gradeId: string, size = 20, date = new Date()): Question[] {
   const grade = getGrade(gradeId)
   if (!grade) return []
 

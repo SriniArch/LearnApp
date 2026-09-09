@@ -101,7 +101,7 @@ export function DailyChallengeScreen({ gradeId, onBack, progress }: DailyChallen
             A mixed quiz for today
           </h2>
           <p className="mt-3 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Ten questions from {grade?.title ?? "your grade"} Math, Science, and Geography. Everyone
+            Twenty questions from {grade?.title ?? "your grade"} Math, Science, and Geography. Everyone
             gets the same set today — it changes tomorrow.
           </p>
 
