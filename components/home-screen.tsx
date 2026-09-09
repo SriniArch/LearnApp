@@ -83,7 +83,7 @@ export function HomeScreen({
                 ? `Done today — best ${daily.bestScore}/${daily.total}`
                 : daily?.status === "in-progress"
                   ? "You started today's mix. Finish it!"
-                  : "10 mixed questions. Same for everyone today."}
+                  : "20 mixed questions. Same for everyone today."}
             </span>
           </span>
           <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-foreground/15 transition-transform group-hover:translate-x-0.5">
