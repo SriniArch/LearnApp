@@ -1,6 +1,5 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises"
-import path from "node:path"
 import { generateBuddyCode, RESERVED_BUDDY_ACCOUNTS } from "@/lib/buddy-code"
+import { ensureSchema, getSql } from "@/lib/db"
 import { mergeProgress, type ProgressMap } from "@/lib/progress-data"
 
 export interface BuddyAccount {
@@ -10,88 +9,11 @@ export interface BuddyAccount {
   updatedAt: string
 }
 
-type AccountTable = Record<string, BuddyAccount>
-
-const FILE_NAME = "buddy-progress.json"
-
-function kvConfigured() {
-  return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN)
-}
-
-async function kvGetTable(): Promise<AccountTable> {
-  const url = process.env.KV_REST_API_URL
-  const token = process.env.KV_REST_API_TOKEN
-  if (!url || !token) return {}
-  const res = await fetch(`${url}/get/kids-buddy-progress-v1`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: "no-store",
-  })
-  if (!res.ok) return {}
-  const payload = (await res.json()) as { result?: unknown }
-  if (!payload.result) return {}
-  if (typeof payload.result === "object") return payload.result as AccountTable
-  try {
-    return JSON.parse(String(payload.result)) as AccountTable
-  } catch {
-    return {}
-  }
-}
-
-async function kvSetTable(table: AccountTable) {
-  const url = process.env.KV_REST_API_URL
-  const token = process.env.KV_REST_API_TOKEN
-  if (!url || !token) return
-  await fetch(`${url}/set/kids-buddy-progress-v1`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(JSON.stringify(table)),
-  })
-}
-
-function fileCandidates() {
-  return [
-    path.join(process.cwd(), "data", FILE_NAME),
-    path.join("/tmp", FILE_NAME),
-  ]
-}
-
-let resolvedFilePath: string | null = null
-
-async function readFileTable(): Promise<{ table: AccountTable; filePath: string }> {
-  const paths = resolvedFilePath
-    ? [resolvedFilePath, ...fileCandidates()]
-    : fileCandidates()
-  for (const filePath of paths) {
-    try {
-      const raw = await readFile(filePath, "utf8")
-      resolvedFilePath = filePath
-      return { table: JSON.parse(raw) as AccountTable, filePath }
-    } catch {
-      // try next location
-    }
-  }
-  return { table: {}, filePath: fileCandidates()[0] }
-}
-
-async function writeFileTable(preferred: string, table: AccountTable) {
-  const paths = [preferred, fileCandidates()[1]].filter(
-    (value, index, all) => all.indexOf(value) === index,
-  )
-  let lastError: unknown
-  for (const filePath of paths) {
-    try {
-      await mkdir(path.dirname(filePath), { recursive: true })
-      await writeFile(filePath, JSON.stringify(table), "utf8")
-      resolvedFilePath = filePath
-      return
-    } catch (err) {
-      lastError = err
-    }
-  }
-  throw lastError
+interface AccountRow {
+  code: string
+  name: string
+  progress: unknown
+  updated_at: string | Date
 }
 
 let queue: Promise<unknown> = Promise.resolve()
@@ -105,74 +27,100 @@ function withLock<T>(fn: () => Promise<T>): Promise<T> {
   return run
 }
 
-function seedReservedAccounts(table: AccountTable): boolean {
-  let changed = false
-  const now = new Date().toISOString()
+function asProgressMap(value: unknown): ProgressMap {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {}
+  return value as ProgressMap
+}
+
+function toIso(value: string | Date): string {
+  if (value instanceof Date) return value.toISOString()
+  const parsed = new Date(value)
+  return Number.isNaN(parsed.getTime()) ? new Date().toISOString() : parsed.toISOString()
+}
+
+function mapRow(row: AccountRow): BuddyAccount {
+  return {
+    code: row.code,
+    name: row.name ?? "",
+    progress: asProgressMap(row.progress),
+    updatedAt: toIso(row.updated_at),
+  }
+}
+
+async function seedReservedAccounts() {
+  const sql = getSql()
   for (const seed of RESERVED_BUDDY_ACCOUNTS) {
-    if (table[seed.code]) continue
-    table[seed.code] = {
-      code: seed.code,
-      name: seed.name,
-      progress: {},
-      updatedAt: now,
-    }
-    changed = true
+    await sql`
+      INSERT INTO buddy_accounts (code, name, progress)
+      VALUES (${seed.code}, ${seed.name}, '{}'::jsonb)
+      ON CONFLICT (code) DO NOTHING
+    `
   }
-  return changed
 }
 
-async function loadTable(): Promise<{ table: AccountTable; filePath: string; useKv: boolean }> {
-  let table: AccountTable
-  let filePath = ""
-  let useKv = false
-  if (kvConfigured()) {
-    table = await kvGetTable()
-    useKv = true
-  } else {
-    const loaded = await readFileTable()
-    table = loaded.table
-    filePath = loaded.filePath
-  }
-  if (seedReservedAccounts(table)) {
-    await persistTable(table, filePath, useKv)
-  }
-  return { table, filePath, useKv }
+async function readyStore() {
+  await ensureSchema()
+  await seedReservedAccounts()
 }
 
-async function persistTable(table: AccountTable, filePath: string, useKv: boolean) {
-  if (useKv) {
-    await kvSetTable(table)
-    return
-  }
-  await writeFileTable(filePath, table)
+async function selectAccount(code: string): Promise<BuddyAccount | null> {
+  const sql = getSql()
+  const rows = (await sql`
+    SELECT code, name, progress, updated_at
+    FROM buddy_accounts
+    WHERE code = ${code}
+    LIMIT 1
+  `) as AccountRow[]
+  const row = rows[0]
+  return row ? mapRow(row) : null
+}
+
+async function insertAccount(account: BuddyAccount) {
+  const sql = getSql()
+  const progressJson = JSON.stringify(account.progress)
+  await sql`
+    INSERT INTO buddy_accounts (code, name, progress, updated_at)
+    VALUES (${account.code}, ${account.name}, ${progressJson}::jsonb, ${account.updatedAt}::timestamptz)
+  `
+}
+
+async function updateAccount(account: BuddyAccount) {
+  const sql = getSql()
+  const progressJson = JSON.stringify(account.progress)
+  await sql`
+    UPDATE buddy_accounts
+    SET
+      name = ${account.name},
+      progress = ${progressJson}::jsonb,
+      updated_at = ${account.updatedAt}::timestamptz
+    WHERE code = ${account.code}
+  `
 }
 
 export async function getAccount(code: string): Promise<BuddyAccount | null> {
   return withLock(async () => {
-    const { table } = await loadTable()
-    return table[code] ?? null
+    await readyStore()
+    return selectAccount(code)
   })
 }
 
 export async function createAccount(name: string, progress: ProgressMap): Promise<BuddyAccount> {
   return withLock(async () => {
-    const { table, filePath, useKv } = await loadTable()
-    let code = generateBuddyCode()
-    for (let i = 0; i < 40 && table[code]; i++) {
-      code = generateBuddyCode()
+    await readyStore()
+    for (let i = 0; i < 40; i++) {
+      const code = generateBuddyCode()
+      const existing = await selectAccount(code)
+      if (existing) continue
+      const account: BuddyAccount = {
+        code,
+        name,
+        progress,
+        updatedAt: new Date().toISOString(),
+      }
+      await insertAccount(account)
+      return account
     }
-    if (table[code]) {
-      throw new Error("Could not allocate a buddy code")
-    }
-    const account: BuddyAccount = {
-      code,
-      name,
-      progress,
-      updatedAt: new Date().toISOString(),
-    }
-    table[code] = account
-    await persistTable(table, filePath, useKv)
-    return account
+    throw new Error("Could not allocate a buddy code")
   })
 }
 
@@ -182,8 +130,8 @@ export async function mergeAndSave(
   name?: string,
 ): Promise<BuddyAccount | null> {
   return withLock(async () => {
-    const { table, filePath, useKv } = await loadTable()
-    const existing = table[code]
+    await readyStore()
+    const existing = await selectAccount(code)
     if (!existing) return null
     const account: BuddyAccount = {
       code,
@@ -191,8 +139,26 @@ export async function mergeAndSave(
       progress: mergeProgress(existing.progress, incoming),
       updatedAt: new Date().toISOString(),
     }
-    table[code] = account
-    await persistTable(table, filePath, useKv)
+    await updateAccount(account)
+    return account
+  })
+}
+
+export async function upsertImportedAccount(incoming: BuddyAccount): Promise<BuddyAccount> {
+  return withLock(async () => {
+    await readyStore()
+    const existing = await selectAccount(incoming.code)
+    if (!existing) {
+      await insertAccount(incoming)
+      return incoming
+    }
+    const account: BuddyAccount = {
+      code: incoming.code,
+      name: incoming.name || existing.name,
+      progress: mergeProgress(existing.progress, incoming.progress),
+      updatedAt: incoming.updatedAt || existing.updatedAt,
+    }
+    await updateAccount(account)
     return account
   })
 }
