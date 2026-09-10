@@ -1,15 +1,9 @@
 // Educational content is loaded from data/curriculum/<grade>/*.json.
 // Shape: Grade (meta.json) + Subject files -> Topic -> Lesson + Questions (base + extra).
-// Add a subject by creating <subject>.json and importing it into the grade's subjects array.
+// Add a subject by creating <subject>.json under a grade folder, then run
+// `npx tsx scripts/generate-curriculum.ts` (also runs via predev/prebuild).
 
-import grade3Meta from "@/data/curriculum/grade-3/meta.json"
-import grade3Math from "@/data/curriculum/grade-3/math.json"
-import grade3Science from "@/data/curriculum/grade-3/science.json"
-import grade3Geography from "@/data/curriculum/grade-3/geography.json"
-import grade7Meta from "@/data/curriculum/grade-7/meta.json"
-import grade7Math from "@/data/curriculum/grade-7/math.json"
-import grade7Science from "@/data/curriculum/grade-7/science.json"
-import grade7Geography from "@/data/curriculum/grade-7/geography.json"
+import { gradeData as generatedGradeData } from "@/lib/curriculum.generated"
 
 export type QuestionType = "mcq" | "boolean" | "number"
 
@@ -65,7 +59,8 @@ export interface Grade {
   subjects: Subject[]
 }
 
-export type SubjectColor = "math" | "science" | "geography"
+/** Subject accent key from JSON; known keys get styled palettes, unknowns fall back. */
+export type SubjectColor = string
 
 interface TopicData {
   id: string
@@ -110,16 +105,7 @@ function loadGrade(data: GradeData): Grade {
   }
 }
 
-const gradeData: GradeData[] = [
-  {
-    ...grade3Meta,
-    subjects: [grade3Math, grade3Science, grade3Geography],
-  } as GradeData,
-  {
-    ...grade7Meta,
-    subjects: [grade7Math, grade7Science, grade7Geography],
-  } as GradeData,
-]
+const gradeData = generatedGradeData as unknown as GradeData[]
 
 export const curriculum: Grade[] = gradeData.map(loadGrade)
 

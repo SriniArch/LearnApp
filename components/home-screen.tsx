@@ -2,7 +2,7 @@
 
 import { ArrowRight, Sparkles, Trophy } from "lucide-react"
 import { curriculum, getGrade } from "@/lib/curriculum"
-import { subjectStyles } from "@/lib/subject-style"
+import { getSubjectStyle } from "@/lib/subject-style"
 import { SubjectIcon } from "@/components/subject-icon"
 import type { useProgress } from "@/hooks/use-progress"
 
@@ -99,7 +99,7 @@ export function HomeScreen({
         </h2>
         <div className="grid gap-5 sm:grid-cols-3">
           {grade?.subjects.map((subject) => {
-            const style = subjectStyles[subject.color]
+            const style = getSubjectStyle(subject.color)
             const total = subject.topics.length
             const done = progress.countCompleted(
               gradeId,
@@ -111,6 +111,7 @@ export function HomeScreen({
                 key={subject.id}
                 type="button"
                 onClick={() => onSelectSubject(subject.id)}
+                style={style.vars}
                 className="group relative flex flex-col overflow-hidden rounded-3xl bg-card p-6 text-left shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <span

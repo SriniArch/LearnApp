@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ArrowLeft, BookOpen, Lightbulb, Sparkles } from "lucide-react"
 import type { Question, Subject, Topic } from "@/lib/curriculum"
 import { buildTopicQuiz } from "@/lib/quiz"
-import { subjectStyles } from "@/lib/subject-style"
+import { getSubjectStyle } from "@/lib/subject-style"
 import { SubjectIcon } from "@/components/subject-icon"
 import { QuizView, ResultView } from "@/components/quiz-play"
 import type { useProgress } from "@/hooks/use-progress"
@@ -30,7 +30,7 @@ export function TopicScreen({
   onNextTopic,
   progress,
 }: TopicScreenProps) {
-  const style = subjectStyles[subject.color]
+  const style = getSubjectStyle(subject.color)
   const [phase, setPhase] = useState<Phase>("lesson")
   const [quizQuestions, setQuizQuestions] = useState<Question[]>(topic.questions)
   const [index, setIndex] = useState(0)
@@ -80,7 +80,7 @@ export function TopicScreen({
   }
 
   return (
-    <div className="pt-6">
+    <div className="pt-6" style={style.vars}>
       <button
         type="button"
         onClick={onBack}

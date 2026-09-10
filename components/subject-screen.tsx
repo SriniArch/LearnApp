@@ -2,7 +2,7 @@
 
 import { ArrowLeft, CheckCircle2, Circle, PlayCircle } from "lucide-react"
 import type { Subject } from "@/lib/curriculum"
-import { subjectStyles } from "@/lib/subject-style"
+import { getSubjectStyle } from "@/lib/subject-style"
 import { SubjectIcon } from "@/components/subject-icon"
 import type { TopicStatus, useProgress } from "@/hooks/use-progress"
 
@@ -42,7 +42,7 @@ export function SubjectScreen({
   onBack,
   progress,
 }: SubjectScreenProps) {
-  const style = subjectStyles[subject.color]
+  const style = getSubjectStyle(subject.color)
   const total = subject.topics.length
   const done = progress.countCompleted(
     gradeId,
@@ -52,7 +52,7 @@ export function SubjectScreen({
   const pct = total > 0 ? Math.round((done / total) * 100) : 0
 
   return (
-    <div className="pt-6">
+    <div className="pt-6" style={style.vars}>
       <button
         type="button"
         onClick={onBack}

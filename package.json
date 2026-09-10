@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate:curriculum": "tsx scripts/generate-curriculum.ts",
+    "predev": "tsx scripts/generate-curriculum.ts",
+    "prebuild": "tsx scripts/generate-curriculum.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

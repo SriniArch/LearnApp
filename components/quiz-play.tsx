@@ -164,35 +164,85 @@ function AnswerArea({
   }
 
   const correctAnswer = question.answer
+  const isNegative = numberValue.startsWith("-")
+  const parsedAnswer = Number(numberValue)
+  const canSubmit = numberValue.trim() !== "" && Number.isFinite(parsedAnswer)
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        if (answered || numberValue.trim() === "") return
-        onAnswer(Number(numberValue) === correctAnswer)
+        if (answered || !canSubmit) return
+        onAnswer(parsedAnswer === correctAnswer)
       }}
       className="flex flex-col gap-3 sm:flex-row"
     >
-      <input
-        type="number"
-        inputMode="numeric"
-        step="any"
-        value={numberValue}
-        disabled={answered}
-        onChange={(e) => setNumberValue(e.target.value)}
-        placeholder="Type your answer"
-        aria-label="Your numeric answer"
-        className="flex-1 rounded-2xl border-2 border-border bg-background px-5 py-4 text-lg font-bold text-foreground outline-none transition-colors placeholder:font-normal placeholder:text-muted-foreground focus:border-primary disabled:opacity-70"
-      />
+      <div className="flex min-w-0 flex-1 gap-3">
+        <input
+          type="text"
+          inputMode="decimal"
+          autoComplete="off"
+          enterKeyHint="done"
+          value={numberValue}
+          disabled={answered}
+          onChange={(e) => setNumberValue(sanitizeNumericInput(e.target.value))}
+          placeholder="Type your answer"
+          aria-label="Your numeric answer"
+          className="min-w-0 flex-1 rounded-2xl border-2 border-border bg-background px-5 py-4 text-lg font-bold text-foreground outline-none transition-colors placeholder:font-normal placeholder:text-muted-foreground focus:border-primary disabled:opacity-70"
+        />
+        <button
+          type="button"
+          disabled={answered}
+          onClick={() => setNumberValue((value) => toggleNumericSign(value))}
+          aria-label="Toggle negative sign"
+          aria-pressed={isNegative}
+          className={[
+            "shrink-0 rounded-2xl border-2 px-5 py-4 font-display text-lg font-extrabold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            isNegative
+              ? "border-primary bg-primary/10 text-foreground"
+              : "border-border bg-background text-foreground hover:border-primary/50",
+          ].join(" ")}
+        >
+          −
+        </button>
+      </div>
       <button
         type="submit"
-        disabled={answered || numberValue.trim() === ""}
-        className="rounded-2xl bg-primary px-6 py-4 font-display text-lg font-extrabold text-primary-foreground shadow-md transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={answered || !canSubmit}
+        className="w-full rounded-2xl bg-primary px-6 py-4 font-display text-lg font-extrabold text-primary-foreground shadow-md transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
       >
         Check
       </button>
     </form>
   )
+}
+
+function sanitizeNumericInput(raw: string): string {
+  let negative = false
+  let body = ""
+  let seenDot = false
+
+  for (const ch of raw) {
+    if (ch === "-" && body === "" && !negative) {
+      negative = true
+      continue
+    }
+    if (ch >= "0" && ch <= "9") {
+      body += ch
+      continue
+    }
+    if (ch === "." && !seenDot) {
+      seenDot = true
+      body += ch
+    }
+  }
+
+  return `${negative ? "-" : ""}${body}`
+}
+
+function toggleNumericSign(value: string): string {
+  if (value.startsWith("-")) return value.slice(1)
+  return `-${value}`
 }
 
 export function ResultView({

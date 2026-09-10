@@ -1,4 +1,12 @@
 {
   "id": "grade-7",
-  "title": "Grade 7"
+  "title": "Grade 7",
+  "subjectOrder": [
+    "math",
+    "science",
+    "geography",
+    "english",
+    "tamil",
+    "computer"
+  ]
 }
