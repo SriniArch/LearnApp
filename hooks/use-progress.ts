@@ -1,7 +1,13 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import { displayBuddyCode, isBuddyCode, normalizeBuddyCode } from "@/lib/buddy-code"
+import {
+  BUDDY_ACCOUNT_KEY,
+  displayBuddyCode,
+  isBuddyCode,
+  normalizeBuddyCode,
+  reservedCodeHint,
+} from "@/lib/buddy-code"
 import { dailyProgressKey } from "@/lib/quiz"
 import {
   mergeProgress,
@@ -14,7 +20,7 @@ import {
 export type { TopicStatus, ProgressRecord }
 
 const STORAGE_KEY = "kids-learning-progress-v1"
-const ACCOUNT_KEY = "kids-learning-buddy-v1"
+const ACCOUNT_KEY = BUDDY_ACCOUNT_KEY
 
 interface StoredAccount {
   code: string
@@ -284,7 +290,7 @@ export function useProgress() {
     async (rawCode: string) => {
       const code = normalizeBuddyCode(rawCode)
       if (!isBuddyCode(code)) {
-        throw new Error("Try magi, yazhini, or a code like PANDA-847.")
+        throw new Error(reservedCodeHint())
       }
       setSyncing(true)
       setSyncError(null)

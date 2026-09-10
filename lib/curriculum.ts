@@ -1,9 +1,15 @@
-// Educational content is loaded from data/curriculum/*.json.
-// Shape: Grade -> Subject -> Topic -> Lesson + Questions (base + extra).
-// Add grades/subjects/topics/questions in those JSON files without touching the UI.
+// Educational content is loaded from data/curriculum/<grade>/*.json.
+// Shape: Grade (meta.json) + Subject files -> Topic -> Lesson + Questions (base + extra).
+// Add a subject by creating <subject>.json and importing it into the grade's subjects array.
 
-import grade3 from "@/data/curriculum/grade-3.json"
-import grade7 from "@/data/curriculum/grade-7.json"
+import grade3Meta from "@/data/curriculum/grade-3/meta.json"
+import grade3Math from "@/data/curriculum/grade-3/math.json"
+import grade3Science from "@/data/curriculum/grade-3/science.json"
+import grade3Geography from "@/data/curriculum/grade-3/geography.json"
+import grade7Meta from "@/data/curriculum/grade-7/meta.json"
+import grade7Math from "@/data/curriculum/grade-7/math.json"
+import grade7Science from "@/data/curriculum/grade-7/science.json"
+import grade7Geography from "@/data/curriculum/grade-7/geography.json"
 
 export type QuestionType = "mcq" | "boolean" | "number"
 
@@ -104,7 +110,16 @@ function loadGrade(data: GradeData): Grade {
   }
 }
 
-const gradeData: GradeData[] = [grade3 as GradeData, grade7 as GradeData]
+const gradeData: GradeData[] = [
+  {
+    ...grade3Meta,
+    subjects: [grade3Math, grade3Science, grade3Geography],
+  } as GradeData,
+  {
+    ...grade7Meta,
+    subjects: [grade7Math, grade7Science, grade7Geography],
+  } as GradeData,
+]
 
 export const curriculum: Grade[] = gradeData.map(loadGrade)
 

@@ -42,42 +42,24 @@ export function AppHeader({
             Learn Buddy
           </span>
         </button>
-
-        <button
-          type="button"
-          onClick={onOpenAccount}
-          className="hidden items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-sm font-bold text-secondary-foreground transition-colors hover:bg-secondary/80 focus-visible:ring-2 focus-visible:ring-ring sm:inline-flex"
-        >
-          <KeyRound className="size-4" aria-hidden="true" />
-          {buddyLabel}
-        </button>
-        <button
-          type="button"
-          onClick={onOpenAccount}
-          className="inline-flex size-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
-          aria-label={buddyLabel}
-        >
-          <KeyRound className="size-4" aria-hidden="true" />
-        </button>
         <Link
           href="/family"
           className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring sm:inline-flex"
         >
           <Users className="size-4" aria-hidden="true" />
-          Family
+          View Progress
         </Link>
         <Link
           href="/family"
           className="inline-flex size-9 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring sm:hidden"
-          aria-label="Family"
+          aria-label="View Progress"
         >
           <Users className="size-4" aria-hidden="true" />
         </Link>
 
-        {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
-          className="ml-auto flex items-center gap-1 text-sm font-semibold text-muted-foreground"
+          className="flex min-w-0 flex-1 items-center gap-1 text-sm font-semibold text-muted-foreground"
         >
           <button
             type="button"
@@ -121,6 +103,15 @@ export function AppHeader({
             </>
           )}
         </nav>
+
+        <button
+          type="button"
+          onClick={onOpenAccount}
+          className="ml-auto inline-flex max-w-[10rem] items-center gap-1.5 truncate rounded-full bg-secondary px-3 py-1.5 text-sm font-bold text-secondary-foreground transition-colors hover:bg-secondary/80 focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <KeyRound className="size-4 shrink-0" aria-hidden="true" />
+          <span className="truncate">{buddyLabel}</span>
+        </button>
       </div>
     </header>
   )

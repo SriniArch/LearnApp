@@ -1,3 +1,5 @@
+import reservedBuddyAccounts from "@/data/reserved-buddy-accounts.json"
+
 const ANIMALS = [
   "panda",
   "tiger",
@@ -46,10 +48,8 @@ const ANIMALS = [
 const ANIMAL_SET = new Set<string>(ANIMALS)
 const CODE_PATTERN = /^[a-z]+-\d{3}$/
 
-export const RESERVED_BUDDY_ACCOUNTS = [
-  { code: "yazhini", name: "Yazhini" },
-  { code: "magi", name: "Magi" },
-] as const
+export const RESERVED_BUDDY_ACCOUNTS: { code: string; name: string }[] =
+  reservedBuddyAccounts
 
 const RESERVED_CODES = new Set<string>(
   RESERVED_BUDDY_ACCOUNTS.map((account) => account.code),
@@ -83,3 +83,23 @@ export function sanitizeDisplayName(raw: unknown): string {
   if (typeof raw !== "string") return ""
   return raw.replace(/\s+/g, " ").trim().slice(0, 32)
 }
+
+function joinNames(names: string[]): string {
+  if (names.length === 0) return ""
+  if (names.length === 1) return names[0]
+  if (names.length === 2) return `${names[0]} and ${names[1]}`
+  return `${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}`
+}
+
+export function reservedAccountNames(): string {
+  return joinNames(RESERVED_BUDDY_ACCOUNTS.map((account) => account.name))
+}
+
+export function reservedCodeHint(): string {
+  const codes = RESERVED_BUDDY_ACCOUNTS.map((account) => account.code)
+  const listed = joinNames(codes)
+  if (!listed) return "Try a code like PANDA-847."
+  return `Try ${listed}, or a code like PANDA-847.`
+}
+
+export const BUDDY_ACCOUNT_KEY = "kids-learning-buddy-v1"

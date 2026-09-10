@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from "react"
 import Link from "next/link"
 import { KeyRound, X } from "lucide-react"
+import { reservedAccountNames, RESERVED_BUDDY_ACCOUNTS } from "@/lib/buddy-code"
 import type { useProgress } from "@/hooks/use-progress"
 
 interface BuddyAccountDialogProps {
@@ -77,6 +78,8 @@ export function BuddyAccountDialog({ open, onClose, progress }: BuddyAccountDial
   }
 
   const error = formError ?? progress.syncError
+  const reservedNames = reservedAccountNames()
+  const codePlaceholder = RESERVED_BUDDY_ACCOUNTS[0]?.code ?? "PANDA-847"
 
   return (
     <div
@@ -183,14 +186,14 @@ export function BuddyAccountDialog({ open, onClose, progress }: BuddyAccountDial
                 I already have a code
               </label>
               <p className="text-sm text-muted-foreground">
-                Magi and Yazhini can type their name. Other codes look like PANDA-847. Use this
-                code makes this phone that child.
+                {reservedNames ? `${reservedNames} can type their name. ` : ""}
+                Other codes look like PANDA-847. Use this code makes this phone that child.
               </p>
               <input
                 id="buddy-code"
                 value={codeInput}
                 onChange={(event) => setCodeInput(event.target.value)}
-                placeholder="magi"
+                placeholder={codePlaceholder}
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
@@ -214,9 +217,10 @@ export function BuddyAccountDialog({ open, onClose, progress }: BuddyAccountDial
             className="font-bold text-primary underline-offset-2 hover:underline"
             onClick={onClose}
           >
-            Family
+            View Progress
           </Link>{" "}
-          lets you view Magi, Yazhini, or any code without switching the kid on this phone.
+          lets you view {reservedNames || "a reserved name"}, or any code without switching
+          the kid on this phone.
         </p>
 
         {error && (

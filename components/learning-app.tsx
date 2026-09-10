@@ -74,7 +74,7 @@ export function LearningApp() {
         gradeId={gradeId}
         subjectTitle={subject?.title}
         topicTitle={topic?.title}
-        buddyLabel={progress.displayName || progress.displayBuddyCode || "Save progress"}
+        buddyLabel={progress.displayBuddyCode || "Save progress"}
         onOpenAccount={() => setAccountOpen(true)}
         onHome={goHome}
         onBackToSubject={goToSubject}

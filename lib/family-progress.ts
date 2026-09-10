@@ -1,10 +1,15 @@
-import { isBuddyCode, normalizeBuddyCode } from "@/lib/buddy-code"
+import {
+  isBuddyCode,
+  normalizeBuddyCode,
+  reservedCodeHint,
+  RESERVED_BUDDY_ACCOUNTS,
+} from "@/lib/buddy-code"
 import { isProgressMap, type ProgressMap } from "@/lib/progress-data"
 
-export const FAMILY_SHORTCUTS = [
-  { code: "magi", label: "Magi" },
-  { code: "yazhini", label: "Yazhini" },
-] as const
+export const FAMILY_SHORTCUTS = RESERVED_BUDDY_ACCOUNTS.map((account) => ({
+  code: account.code,
+  label: account.name,
+}))
 
 export type FamilyAccountOk = {
   ok: true
@@ -28,7 +33,7 @@ export async function fetchFamilyAccount(rawCode: string): Promise<FamilyAccount
     return {
       ok: false,
       code,
-      error: "Try magi, yazhini, or a code like PANDA-847.",
+      error: reservedCodeHint(),
     }
   }
 

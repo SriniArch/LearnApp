@@ -10,7 +10,12 @@ import {
   rosterCodes,
   type FamilyAccountResult,
 } from "@/lib/family-progress"
-import { isBuddyCode, normalizeBuddyCode } from "@/lib/buddy-code"
+import {
+  isBuddyCode,
+  normalizeBuddyCode,
+  reservedAccountNames,
+  reservedCodeHint,
+} from "@/lib/buddy-code"
 
 export function FamilyView() {
   const router = useRouter()
@@ -38,7 +43,7 @@ export function FamilyView() {
   function lookUpCode(raw: string) {
     const code = normalizeBuddyCode(raw)
     if (!isBuddyCode(code)) {
-      setFormError("Try magi, yazhini, or a code like PANDA-847.")
+      setFormError(reservedCodeHint())
       return
     }
     setFormError(null)
@@ -54,12 +59,12 @@ export function FamilyView() {
           View only
         </p>
         <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-          Family progress
+          View Progress
         </h1>
         <p className="mt-3 max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">
-          Look up Magi, Yazhini, or any buddy code. This page only reads weekly daily-challenge XP
-          (Sunday–Saturday). It does not become that child on this phone — use their code on the
-          home screen to play as them.
+          Look up {reservedAccountNames() || "a reserved name"}, or any buddy code. This page only
+          reads weekly daily-challenge XP (Sunday–Saturday). It does not become that child on this
+          phone — use their code on the home screen to play as them.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
